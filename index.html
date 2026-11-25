@@ -323,6 +323,35 @@
    (number 1 theke shuru, majhe gap rakha jabe na, chhoto hater lekha)
    Notun category chaile nicher CATS list-e naam likhun, ar upore filter button-o jog korun. */
 const CATS = ['nature','landscape','architecture','travel','islamic'];
+/* Sample gallery photos (online, Unsplash) — kono category-te nijer photo na thakle
+   egulo dekhabe. Nijer photo (jemon nature-1.jpg) add korlei oi category-r sample sorbe. */
+const SAMPLES = {
+  nature: [
+    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1600&q=80'
+  ],
+  landscape: [
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1600&q=80'
+  ],
+  architecture: [
+    'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80'
+  ],
+  travel: [
+    'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1600&q=80'
+  ],
+  islamic: [
+    'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1600&q=80',
+    'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1600&q=80'
+  ]
+};
 const EXTS = ['jpg','jpeg','png','webp'];
 const MAX_PER_CAT = 100;
 const gallery = document.getElementById('gallery');
@@ -341,6 +370,8 @@ async function scanCat(c){
 }
 (async()=>{
   const lists = await Promise.all(CATS.map(scanCat));
+  /* Khali category-te sample photo boshan: nijer photo thakle sample asbe na */
+  lists.forEach((l, i) => { if (!l.length) lists[i] = SAMPLES[CATS[i]].map((src, idx) => ({src, c: CATS[i], n: idx + 1})); });
   /* sob folder mishiye dekhabe, jate ALL-e ekta folder-er por arekta na ashe */
   const all=[]; for(let i=0; lists.some(l=>i<l.length); i++) lists.forEach(l=>{ if(i<l.length) all.push(l[i]); });
   galleryLoaded = true;
