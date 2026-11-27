@@ -289,72 +289,63 @@
   </div>
 </section>
 
-<!-- BLOG / JOURNAL -->
-<section id="blog" class="px-5 md:px-10 py-16 md:py-24 border-t border-bone/15">
-  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<!-- BLOG / JOURNAL — compact editorial list. Click a row to read the full post. -->
+<section id="blog" class="px-5 md:px-10 py-12 md:py-16 border-t border-bone/15">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
     <div class="reveal">
-      <div class="text-[11px] uppercase tracking-[0.3em] text-acid mb-4">Blog · Journal</div>
-      <h2 class="display text-[13vw] md:text-[8vw] leading-none">JOURNAL</h2>
+      <div class="text-[11px] uppercase tracking-[0.3em] text-acid mb-3">Blog · Journal</div>
+      <h2 class="display text-[13vw] md:text-[6vw] leading-none">JOURNAL</h2>
     </div>
-    <p class="max-w-md text-sm md:text-base text-bone/70 leading-relaxed reveal">Notes from behind the lens — trips, light, and lessons from my photographs.</p>
+    <p class="max-w-md text-sm text-bone/70 leading-relaxed reveal">Notes from behind the lens. Click a story to read it in full.</p>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-3 md:gap-4">
-    <article class="reveal border-2 border-bone/15 flex flex-col">
-      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80" alt="Misty hills in the early morning light" class="w-full h-56 object-cover" loading="lazy">
-      <div class="p-6 flex flex-col flex-1">
-        <div class="text-[11px] uppercase tracking-[0.25em] text-acid">Photography · Nature</div>
-        <div class="text-[11px] uppercase tracking-[0.2em] text-bone/50 mt-2">27 Nov 2026 · 3 min read</div>
-        <h3 class="display text-2xl md:text-3xl leading-tight mt-4">Morning Light in Cumilla</h3>
-        <p class="text-sm text-bone/70 leading-relaxed mt-3">The best light in Cumilla comes early, before the town fully wakes up. That soft, low light is why I keep going out with my camera in the morning.</p>
-        <details class="mt-4">
-          <summary class="cursor-pointer display text-sm text-acid tracking-widest" style="list-style:none;">READ STORY →</summary>
-          <div class="mt-4 space-y-3 text-sm text-bone/70 leading-relaxed">
-            <p>Morning is my favourite time to photograph. The air is cooler, the streets are quieter, and the light is soft enough to show every detail without harsh shadows.</p>
-            <p>On a good morning, mist sits low over the fields and the first sun turns everything gold for just a few minutes. You have to be ready — that light does not wait.</p>
-            <p>That is the lesson the morning keeps teaching me: show up early, be patient, and the world will give you a photograph worth keeping.</p>
-          </div>
-        </details>
-      </div>
-    </article>
+  <div class="reveal">
+    <button type="button" data-post="morning" class="blog-row group w-full text-left flex items-center gap-4 md:gap-6 py-5 border-t border-bone/15 hover:bg-bone/5 transition-colors cursor-pointer">
+      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=200&q=70" alt="Misty hills in the early morning light" class="w-16 h-16 md:w-20 md:h-20 object-cover border border-bone/15 shrink-0" loading="lazy">
+      <span class="flex-1 min-w-0">
+        <span class="block text-[11px] uppercase tracking-[0.25em] text-acid">Photography · Nature &nbsp;·&nbsp; 27 Nov 2026 · 3 min</span>
+        <span class="block display text-xl md:text-3xl leading-tight mt-1 group-hover:text-acid transition-colors">Morning Light in Cumilla</span>
+        <span class="block text-sm text-bone/60 leading-relaxed mt-1 truncate">The best light comes early, before the town fully wakes up.</span>
+      </span>
+      <span class="shrink-0 w-10 h-10 md:w-12 md:h-12 grid place-items-center border border-bone/30 rounded-full display text-lg group-hover:bg-acid group-hover:text-ink group-hover:border-acid transition-all" aria-hidden="true">→</span>
+    </button>
 
-    <article class="reveal border-2 border-bone/15 flex flex-col">
-      <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80" alt="A mosque in warm evening light" class="w-full h-56 object-cover" loading="lazy">
-      <div class="p-6 flex flex-col flex-1">
-        <div class="text-[11px] uppercase tracking-[0.25em] text-acid">Islamic · Architecture</div>
-        <div class="text-[11px] uppercase tracking-[0.2em] text-bone/50 mt-2">20 Nov 2026 · 4 min read</div>
-        <h3 class="display text-2xl md:text-3xl leading-tight mt-4">Mosques, Light and Silence</h3>
-        <p class="text-sm text-bone/70 leading-relaxed mt-3">A mosque is more than a building to photograph. It is light, geometry, and silence — and the camera has to respect all three.</p>
-        <details class="mt-4">
-          <summary class="cursor-pointer display text-sm text-acid tracking-widest" style="list-style:none;">READ STORY →</summary>
-          <div class="mt-4 space-y-3 text-sm text-bone/70 leading-relaxed">
-            <p>When I photograph a mosque, I look first at the light. Late afternoon sun on a dome, shadows falling across an archway, a quiet courtyard — these are the moments that stay with me.</p>
-            <p>Islamic architecture is full of patterns and geometry, but a good photograph is not only about the pattern. It is about the feeling of standing there, in a place built for prayer and peace.</p>
-            <p>I try to photograph these places slowly and respectfully, the way I would want someone to photograph a place that matters to me.</p>
-          </div>
-        </details>
-      </div>
-    </article>
+    <button type="button" data-post="mosque" class="blog-row group w-full text-left flex items-center gap-4 md:gap-6 py-5 border-t border-bone/15 hover:bg-bone/5 transition-colors cursor-pointer">
+      <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=200&q=70" alt="A mosque in warm evening light" class="w-16 h-16 md:w-20 md:h-20 object-cover border border-bone/15 shrink-0" loading="lazy">
+      <span class="flex-1 min-w-0">
+        <span class="block text-[11px] uppercase tracking-[0.25em] text-acid">Islamic · Architecture &nbsp;·&nbsp; 20 Nov 2026 · 4 min</span>
+        <span class="block display text-xl md:text-3xl leading-tight mt-1 group-hover:text-acid transition-colors">Mosques, Light and Silence</span>
+        <span class="block text-sm text-bone/60 leading-relaxed mt-1 truncate">A mosque is more than a building to photograph.</span>
+      </span>
+      <span class="shrink-0 w-10 h-10 md:w-12 md:h-12 grid place-items-center border border-bone/30 rounded-full display text-lg group-hover:bg-acid group-hover:text-ink group-hover:border-acid transition-all" aria-hidden="true">→</span>
+    </button>
 
-    <article class="reveal border-2 border-bone/15 flex flex-col">
-      <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80" alt="An open road on a travel day" class="w-full h-56 object-cover" loading="lazy">
-      <div class="p-6 flex flex-col flex-1">
-        <div class="text-[11px] uppercase tracking-[0.25em] text-acid">Travel · Photography</div>
-        <div class="text-[11px] uppercase tracking-[0.2em] text-bone/50 mt-2">12 Nov 2026 · 3 min read</div>
-        <h3 class="display text-2xl md:text-3xl leading-tight mt-4">Why I Carry a Camera Everywhere</h3>
-        <p class="text-sm text-bone/70 leading-relaxed mt-3">Most of my favourite photographs were not planned. They happened on an ordinary road, on an ordinary day — because I had my camera with me.</p>
-        <details class="mt-4">
-          <summary class="cursor-pointer display text-sm text-acid tracking-widest" style="list-style:none;">READ STORY →</summary>
-          <div class="mt-4 space-y-3 text-sm text-bone/70 leading-relaxed">
-            <p>A camera changes how you look at a journey. You start noticing the bend in a road, the way light falls on a field, or a small moment that would otherwise pass by.</p>
-            <p>Travelling with a camera is not about taking hundreds of photos. It is about slowing down, paying attention, and keeping one honest frame from the day.</p>
-            <p>That is why my camera goes with me everywhere — even when I am not sure I will take a single photograph.</p>
-          </div>
-        </details>
-      </div>
-    </article>
+    <button type="button" data-post="camera" class="blog-row group w-full text-left flex items-center gap-4 md:gap-6 py-5 border-t border-b border-bone/15 hover:bg-bone/5 transition-colors cursor-pointer">
+      <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=200&q=70" alt="An open road on a travel day" class="w-16 h-16 md:w-20 md:h-20 object-cover border border-bone/15 shrink-0" loading="lazy">
+      <span class="flex-1 min-w-0">
+        <span class="block text-[11px] uppercase tracking-[0.25em] text-acid">Travel · Photography &nbsp;·&nbsp; 12 Nov 2026 · 3 min</span>
+        <span class="block display text-xl md:text-3xl leading-tight mt-1 group-hover:text-acid transition-colors">Why I Carry a Camera Everywhere</span>
+        <span class="block text-sm text-bone/60 leading-relaxed mt-1 truncate">Most of my favourite photographs were not planned.</span>
+      </span>
+      <span class="shrink-0 w-10 h-10 md:w-12 md:h-12 grid place-items-center border border-bone/30 rounded-full display text-lg group-hover:bg-acid group-hover:text-ink group-hover:border-acid transition-all" aria-hidden="true">→</span>
+    </button>
   </div>
 </section>
+
+<!-- BLOG READER — full post view, opens on click -->
+<div id="blogReader" class="fixed inset-0 z-[95] bg-ink hidden overflow-y-auto">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-8 md:py-14">
+    <button id="blogClose" type="button" class="display text-sm tracking-widest border border-bone px-4 py-2 hover:bg-acid hover:text-ink hover:border-acid transition-colors cursor-pointer">← BACK TO JOURNAL</button>
+    <div id="blogReaderMeta" class="text-[11px] uppercase tracking-[0.25em] text-acid mt-10"></div>
+    <h2 id="blogReaderTitle" class="display text-4xl md:text-6xl leading-[1.05] mt-4"></h2>
+    <img id="blogReaderImg" src="" alt="" class="w-full h-64 md:h-96 object-cover border border-bone/15 mt-8">
+    <div id="blogReaderBody" class="mt-8 space-y-5 text-bone/75 leading-relaxed md:text-lg"></div>
+    <div class="flex justify-between gap-4 mt-12 pt-8 border-t border-bone/15">
+      <button id="blogPrev" type="button" class="display text-sm md:text-base px-4 py-3 border border-bone/30 hover:bg-acid hover:text-ink hover:border-acid transition-colors cursor-pointer">← Previous</button>
+      <button id="blogNext" type="button" class="display text-sm md:text-base px-4 py-3 border border-bone/30 hover:bg-acid hover:text-ink hover:border-acid transition-colors cursor-pointer">Next →</button>
+    </div>
+  </div>
+</div>
 
 <!-- CONTACT -->
 <section id="contact" class="bg-bone text-ink px-5 md:px-10 py-20 md:py-32 mt-10">
@@ -526,6 +517,56 @@ const mm=document.getElementById('mobileMenu');
 document.getElementById('menuBtn').onclick=()=>mm.classList.remove('translate-x-full');
 document.getElementById('closeBtn').onclick=()=>mm.classList.add('translate-x-full');
 document.querySelectorAll('.menu-link').forEach(a=>a.onclick=()=>mm.classList.add('translate-x-full'));
+
+/* ---------- Blog reader ---------- */
+const BLOG_POSTS = [
+  { id:'morning', cat:'Photography · Nature', date:'27 Nov 2026', read:'3 min read',
+    title:'Morning Light in Cumilla',
+    img:'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=80', alt:'Misty hills in the early morning light',
+    body:[
+      'The best light in Cumilla comes early, before the town fully wakes up. That soft, low light is why I keep going out with my camera in the morning.',
+      'Morning is my favourite time to photograph. The air is cooler, the streets are quieter, and the light is soft enough to show every detail without harsh shadows.',
+      'On a good morning, mist sits low over the fields and the first sun turns everything gold for just a few minutes. You have to be ready — that light does not wait.',
+      'That is the lesson the morning keeps teaching me: show up early, be patient, and the world will give you a photograph worth keeping.'
+    ]},
+  { id:'mosque', cat:'Islamic · Architecture', date:'20 Nov 2026', read:'4 min read',
+    title:'Mosques, Light and Silence',
+    img:'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1600&q=80', alt:'A mosque in warm evening light',
+    body:[
+      'A mosque is more than a building to photograph. It is light, geometry, and silence — and the camera has to respect all three.',
+      'When I photograph a mosque, I look first at the light. Late afternoon sun on a dome, shadows falling across an archway, a quiet courtyard — these are the moments that stay with me.',
+      'Islamic architecture is full of patterns and geometry, but a good photograph is not only about the pattern. It is about the feeling of standing there, in a place built for prayer and peace.',
+      'I try to photograph these places slowly and respectfully, the way I would want someone to photograph a place that matters to me.'
+    ]},
+  { id:'camera', cat:'Travel · Photography', date:'12 Nov 2026', read:'3 min read',
+    title:'Why I Carry a Camera Everywhere',
+    img:'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80', alt:'An open road on a travel day',
+    body:[
+      'Most of my favourite photographs were not planned. They happened on an ordinary road, on an ordinary day — because I had my camera with me.',
+      'A camera changes how you look at a journey. You start noticing the bend in a road, the way light falls on a field, or a small moment that would otherwise pass by.',
+      'Travelling with a camera is not about taking hundreds of photos. It is about slowing down, paying attention, and keeping one honest frame from the day.',
+      'That is why my camera goes with me everywhere — even when I am not sure I will take a single photograph.'
+    ]}
+];
+let blogIdx = 0;
+const blogReader = document.getElementById('blogReader');
+function openPost(id){
+  const i = BLOG_POSTS.findIndex(p=>p.id===id); if(i<0) return;
+  blogIdx = i; const p = BLOG_POSTS[i];
+  document.getElementById('blogReaderMeta').textContent = p.cat + ' · ' + p.date + ' · ' + p.read;
+  document.getElementById('blogReaderTitle').textContent = p.title;
+  const im = document.getElementById('blogReaderImg'); im.src = p.img; im.alt = p.alt;
+  document.getElementById('blogReaderBody').innerHTML = p.body.map(t=>'<p>'+t+'</p>').join('');
+  document.getElementById('blogPrev').style.visibility = i===0 ? 'hidden' : 'visible';
+  document.getElementById('blogNext').style.visibility = i===BLOG_POSTS.length-1 ? 'hidden' : 'visible';
+  blogReader.classList.remove('hidden'); blogReader.scrollTop = 0; document.body.style.overflow='hidden';
+}
+function closeBlog(){ blogReader.classList.add('hidden'); document.body.style.overflow=''; }
+document.querySelectorAll('.blog-row').forEach(b=>b.addEventListener('click',()=>openPost(b.dataset.post)));
+document.getElementById('blogClose').onclick = closeBlog;
+document.getElementById('blogPrev').onclick = ()=>openPost(BLOG_POSTS[(blogIdx-1+BLOG_POSTS.length)%BLOG_POSTS.length].id);
+document.getElementById('blogNext').onclick = ()=>openPost(BLOG_POSTS[(blogIdx+1)%BLOG_POSTS.length].id);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape' && !blogReader.classList.contains('hidden')) closeBlog(); });
 
 document.getElementById('year').textContent=new Date().getFullYear();
 
