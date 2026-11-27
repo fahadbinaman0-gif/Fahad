@@ -290,7 +290,7 @@
 </section>
 
 <!-- BLOG / JOURNAL — compact editorial list. Click a row to read the full post. -->
-<section id="blog" class="px-5 md:px-10 py-12 md:py-16 border-t border-bone/15">
+<section id="blog" class="px-5 md:px-10 py-12 md:py-16 border-t border-bone/15 scroll-mt-20">
   <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
     <div class="reveal">
       <div class="text-[11px] uppercase tracking-[0.3em] text-acid mb-3">Blog · Journal</div>
@@ -334,7 +334,7 @@
 
 <!-- BLOG READER — full post view, opens on click -->
 <div id="blogReader" class="fixed inset-0 z-[95] bg-ink hidden overflow-y-auto">
-  <div class="max-w-3xl mx-auto px-5 md:px-8 py-8 md:py-14">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 pt-24 pb-10 md:pt-28 md:pb-14">
     <button id="blogClose" type="button" class="display text-sm tracking-widest border border-bone px-4 py-2 hover:bg-acid hover:text-ink hover:border-acid transition-colors cursor-pointer">← BACK TO JOURNAL</button>
     <div id="blogReaderMeta" class="text-[11px] uppercase tracking-[0.25em] text-acid mt-10"></div>
     <h2 id="blogReaderTitle" class="display text-4xl md:text-6xl leading-[1.05] mt-4"></h2>
@@ -550,6 +550,7 @@ const BLOG_POSTS = [
 ];
 let blogIdx = 0;
 const blogReader = document.getElementById('blogReader');
+const siteHeader = document.querySelector('header');
 function openPost(id){
   const i = BLOG_POSTS.findIndex(p=>p.id===id); if(i<0) return;
   blogIdx = i; const p = BLOG_POSTS[i];
@@ -559,9 +560,9 @@ function openPost(id){
   document.getElementById('blogReaderBody').innerHTML = p.body.map(t=>'<p>'+t+'</p>').join('');
   document.getElementById('blogPrev').style.visibility = i===0 ? 'hidden' : 'visible';
   document.getElementById('blogNext').style.visibility = i===BLOG_POSTS.length-1 ? 'hidden' : 'visible';
-  blogReader.classList.remove('hidden'); blogReader.scrollTop = 0; document.body.style.overflow='hidden';
+  blogReader.classList.remove('hidden'); blogReader.scrollTop = 0; document.body.style.overflow='hidden'; if(siteHeader) siteHeader.style.display='none';
 }
-function closeBlog(){ blogReader.classList.add('hidden'); document.body.style.overflow=''; }
+function closeBlog(){ blogReader.classList.add('hidden'); document.body.style.overflow=''; if(siteHeader) siteHeader.style.display=''; }
 document.querySelectorAll('.blog-row').forEach(b=>b.addEventListener('click',()=>openPost(b.dataset.post)));
 document.getElementById('blogClose').onclick = closeBlog;
 document.getElementById('blogPrev').onclick = ()=>openPost(BLOG_POSTS[(blogIdx-1+BLOG_POSTS.length)%BLOG_POSTS.length].id);
